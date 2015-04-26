@@ -340,14 +340,14 @@ void displayFinalMenu()
 /* reads file into tree */
 void easyTree(MovieTree * mt)
 {
-	int arrayCheck[5];
-	for(int i=0; i<5; i++){
+	int arrayCheck[6];
+	for(int i=0; i<6; i++){
 		arrayCheck[i] = 0;
 	}
-	for(int i=0; i < 5; i++)
+	for(int i=0; i < 6; i++)
 	{
 		int val = rand()%100 + 1; // random # 1-100;
-		if(!checkSameVal(arrayCheck, val, 5)){
+		if(!checkSameVal(arrayCheck, val, 6)){
 			//cout<<val<<endl;
 			arrayCheck[i] = val;
 			mt->addMovieNode(val);
