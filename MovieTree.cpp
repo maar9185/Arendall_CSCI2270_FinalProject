@@ -2,6 +2,7 @@
 #include "MovieTree.h"
 #include <stdio.h>
 #include <stdlib.h>
+#include <vector>
 
 using namespace std;
 
@@ -672,3 +673,5 @@ bool MovieTree::checkNIL(MovieNode * node){
 		return true;
 	return false;
 }
+
+

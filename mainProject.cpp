@@ -21,6 +21,7 @@ int main(int argc, char*argv[])
 {
     int input;
 	int score = 0;
+	vector<string> path;
     // Create a new communication network
     //MovieTree *mt = new MovieTree();
 	MovieNode * Matched = new MovieNode;
@@ -36,6 +37,7 @@ int main(int argc, char*argv[])
 		MovieTree *mt = new MovieTree();
 		tryAgain = false;
 		quit = false;
+		score = 0;
 		displayMainMenu();
 		cin >> input;
 		//clear out cin
@@ -100,16 +102,37 @@ int main(int argc, char*argv[])
 				// Move Left
 				case 1:
 					current = current->leftChild;
-					cout<<current->key<<endl;
+					//cout<<current->key<<endl;
+					path.push_back("L");
 					score++;
 					if(!mt->checkNIL(current) && current->key == Matched->key){
 						cout<<"You found: "<<current->key<<endl;
 						cout<<"YOU WIN!!!"<<endl;
+						
+						cout<<"Path: "<<path[0];
+						for(int i = 1; i < path.size(); i++){
+							cout<<" - "<<path[i];
+							//path.pop_front();
+						}
+						cout<<endl;
+						path.clear();
+						
 						flagWon = true;
 						tryAgain = true;
 					}
 					else if(mt->checkNIL(current)){
 						cout<<"Dead END"<<endl;
+						
+						cout<<"Path: "<<path[0];
+						for(int i = 1; i < path.size(); i++){
+							cout<<" - "<<path[i];
+							//path.pop_front();
+						}
+						cout<<endl;
+						path.clear();
+						//for(int i = 0; i <= path.size(); i++){
+						//	path.pop_back();
+						//}
 						current = mt->chooseCurrent();
 						cout<<"Restart at root: "<<current->key<<endl;
 					}
@@ -120,15 +143,37 @@ int main(int argc, char*argv[])
 				// Move Right
 				case 2:
 					current = current->rightChild;
-					cout<<current->key<<endl;
+					//cout<<current->key<<endl;
+					path.push_back("R");
 					score++;
 					if(!mt->checkNIL(current) && current->key == Matched->key){
 						cout<<"You found: "<<current->key<<endl;
 						cout<<"YOU WIN!!!"<<endl;
+						
+						cout<<"Path: "<<path[0];
+						for(int i = 1; i < path.size(); i++){
+							cout<<" - "<<path[i];
+							//path.pop_front();
+						}
+						cout<<endl;
+						path.clear();
+						
+						flagWon = true;
 						tryAgain = true;
 					}
 					else if(mt->checkNIL(current)){
 						cout<<"Dead END"<<endl;
+						
+						cout<<"Path: "<<path[0];
+						for(int i = 1; i < path.size(); i++){
+							cout<<" - "<<path[i];
+							//path.pop_front();
+						}
+						cout<<endl;
+						path.clear();
+						//for(int i = 0; i <= path.size(); i++){
+						//	path.pop_back();
+						//}
 						current = mt->chooseCurrent();
 						cout<<"Restart at root: "<<current->key<<endl;
 					}
@@ -139,15 +184,37 @@ int main(int argc, char*argv[])
 				// Move Back
 				case 3:
 					current = current->parent;
-					cout<<current->key<<endl;
+					//cout<<current->key<<endl;
+					path.push_back("B");
 					score++;
 					if(!mt->checkNIL(current) && current->key == Matched->key){
 						cout<<"You found: "<<current->key<<endl;
 						cout<<"YOU WIN!!!"<<endl;
+						
+						cout<<"Path: "<<path[0];
+						for(int i = 1; i < path.size(); i++){
+							cout<<" - "<<path[i];
+							//path.pop_front();
+						}
+						cout<<endl;
+						path.clear();
+						
+						flagWon = true;
 						tryAgain = true;
 					}
 					else if(mt->checkNIL(current)){
 						cout<<"Dead END"<<endl;
+						
+						cout<<"Path: "<<path[0];
+						for(int i = 1; i < path.size(); i++){
+							cout<<" - "<<path[i];
+							//path.pop_front();
+						}
+						cout<<endl;
+						path.clear();
+						//for(int i = 0; i <= path.size(); i++){
+						//	path.pop_back();
+						//}
 						current = mt->chooseCurrent();
 						cout<<"Restart at root: "<<current->key<<endl;
 					}
