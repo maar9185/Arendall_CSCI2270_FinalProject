@@ -3,11 +3,10 @@
 
 #include <json/json.h>
 
+using namespace std;
+
 struct MovieNode{
-    int ranking;
-    std::string title;
-    int year;
-    int quantity;
+    int key;
     bool isRed;
     MovieNode *parent;
     MovieNode *leftChild;
@@ -15,12 +14,9 @@ struct MovieNode{
 
     MovieNode(){};
 
-    MovieNode(int in_ranking, std::string in_title, int in_year, int in_quantity)
+    MovieNode(int in_key)
     {
-        ranking = in_ranking;
-        title = in_title;
-        year = in_year;
-        quantity = in_quantity;
+        key = in_key;
         // Now that we are using nil these NULL's should be overwritten in addMovieNode.
     	leftChild = NULL;
     	rightChild = NULL;
@@ -39,20 +35,22 @@ class MovieTree
         virtual ~MovieTree();
         void printMovieInventory();
         int countMovieNodes();
-        void deleteMovieNode(std::string title);
-        void addMovieNode(int ranking, std::string title, int releaseYear, int quantity);
-        void findMovie(std::string title);
-        void rentMovie(std::string title);
+        void deleteMovieNode(int key);
+        void addMovieNode(int key);
+        void findMovie(int key);
         bool isValid();
-        int countLongestPath();
-        //use this to return the json object from the class when you are ready to write it to a file
-        json_object* getJsonObject();
+        double countLongestPath();
+        MovieNode* chooseMatch();
+        MovieNode* chooseCurrent();
+        void calculateScore(int score, bool flagWon);
+        bool checkNIL(MovieNode * node);
 
     protected:
 
     private:
         void DeleteAll(MovieNode * node); //use this for the post-order traversal deletion of the tree
-        void printMovieInventory(MovieNode * node, json_object * traverseLog);
+        void printMovieInventory(MovieNode * node);//, json_object * traverseLog);
+        void printNodeParent(MovieNode *node);
         void rbAddFixup(MovieNode * node); // called after insert to fix tree
         void leftRotate(MovieNode * x);
         void rbDelete(MovieNode * z);
@@ -61,13 +59,10 @@ class MovieTree
         void rbTransplant(MovieNode * u, MovieNode * v);
         int rbValid(MovieNode * node);
         int countMovieNodes(MovieNode *node);
-        int countLongestPath(MovieNode *node);
-        MovieNode* searchMovieTree(MovieNode * node, std::string title, json_object * traverseLog);
+        double countLongestPath(MovieNode *node);
+        MovieNode* searchMovieTree(MovieNode * node, int key);//, json_object * traverseLog);
         MovieNode *root;
         MovieNode *nil;
-        // Count of how many operations we have done.
-        //including the json_object in the class makes it global within the class, much easier to work with
-        json_object * Assignment6Output;
 
 
 };
