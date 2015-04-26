@@ -52,7 +52,8 @@ int main(int argc, char*argv[])
 				easyTree(mt);
 				current = mt->chooseCurrent();
 				Matched = mt->chooseMatch();
-				cout<< "Your key is: "<< Matched->key<<endl;
+				cout<< "You chose Easy: "<<endl;
+				cout<< "Try to find: "<< Matched->key<<endl;
 				cout<< "You are currently at: "<< current->key<<endl;
 				break;
 			}
@@ -61,7 +62,8 @@ int main(int argc, char*argv[])
 				mediumTree(mt);
 				current = mt->chooseCurrent();
 				Matched = mt->chooseMatch();
-				cout<< "Your key is: "<< Matched->key<<endl;
+				cout<< "You chose Medium: "<<endl;
+				cout<< "Try to find: "<< Matched->key<<endl;
 				cout<< "You are currently at: "<< current->key<<endl;
 				break;
 			}
@@ -70,7 +72,8 @@ int main(int argc, char*argv[])
 				hardTree(mt);
 				current = mt->chooseCurrent();
 				Matched = mt->chooseMatch();
-				cout<< "Your key is: "<< Matched->key<<endl;
+				cout<< "You chose Hard: "<<endl;
+				cout<< "Try to find: "<< Matched->key<<endl;
 				cout<< "You are currently at: "<< current->key<<endl;
 				break;
 			}
@@ -107,7 +110,7 @@ int main(int argc, char*argv[])
 					score++;
 					if(!mt->checkNIL(current) && current->key == Matched->key){
 						cout<<"You found: "<<current->key<<endl;
-						cout<<"YOU WIN!!!"<<endl;
+						cout<<"***YOU WIN!!!***"<<endl;
 						
 						cout<<"Path: "<<path[0];
 						for(int i = 1; i < path.size(); i++){
@@ -121,7 +124,7 @@ int main(int argc, char*argv[])
 						tryAgain = true;
 					}
 					else if(mt->checkNIL(current)){
-						cout<<"Dead END"<<endl;
+						cout<<"***Dead END***"<<endl;
 						
 						cout<<"Path: "<<path[0];
 						for(int i = 1; i < path.size(); i++){
@@ -148,7 +151,7 @@ int main(int argc, char*argv[])
 					score++;
 					if(!mt->checkNIL(current) && current->key == Matched->key){
 						cout<<"You found: "<<current->key<<endl;
-						cout<<"YOU WIN!!!"<<endl;
+						cout<<"***YOU WIN!!!***"<<endl;
 						
 						cout<<"Path: "<<path[0];
 						for(int i = 1; i < path.size(); i++){
@@ -162,7 +165,7 @@ int main(int argc, char*argv[])
 						tryAgain = true;
 					}
 					else if(mt->checkNIL(current)){
-						cout<<"Dead END"<<endl;
+						cout<<"***Dead END***"<<endl;
 						
 						cout<<"Path: "<<path[0];
 						for(int i = 1; i < path.size(); i++){
@@ -189,7 +192,7 @@ int main(int argc, char*argv[])
 					score++;
 					if(!mt->checkNIL(current) && current->key == Matched->key){
 						cout<<"You found: "<<current->key<<endl;
-						cout<<"YOU WIN!!!"<<endl;
+						cout<<"***YOU WIN!!!***"<<endl;
 						
 						cout<<"Path: "<<path[0];
 						for(int i = 1; i < path.size(); i++){
@@ -203,7 +206,7 @@ int main(int argc, char*argv[])
 						tryAgain = true;
 					}
 					else if(mt->checkNIL(current)){
-						cout<<"Dead END"<<endl;
+						cout<<"***Dead END***"<<endl;
 						
 						cout<<"Path: "<<path[0];
 						for(int i = 1; i < path.size(); i++){
@@ -315,7 +318,7 @@ void displayPathMenu()
 
 void displayMainMenu()
 {
-    cout << "======Maze Wizard=====" << endl;
+    cout << "======Maze Tree Wizard=====" << endl;
     cout << "Choose a Difficulty" << endl;
     cout << "1. Easy" << endl;
     cout << "2. Medium" << endl;
@@ -326,7 +329,7 @@ void displayMainMenu()
 
 void displayFinalMenu()
 {
-	cout << "======Maze Wizard Results=====" << endl;
+	cout << "======Maze Tree Wizard Results=====" << endl;
 	cout << "1. Show Score" << endl;
     cout << "2. Print Tree Maze" << endl;
     cout << "3. Try Again" << endl;

@@ -619,20 +619,28 @@ MovieNode* MovieTree::chooseCurrent()
 MovieNode* MovieTree::chooseMatch()
 {
 	MovieNode * Match = root;
-	/*while (1)
+	while (1)
 	{
-		if(Match->rightChild != nil && Match->leftChild != nil)
+		if(Match->rightChild != nil || Match->leftChild != nil)
 		{
 			//cout<<1<<endl;
+
 			if(rand() % 100 > 50) 
 				Match = Match->rightChild;
 			else
-				Match = Match->leftChild;	
+				Match = Match->leftChild;
+
 		}
-		else
-			break;
-	}*/
-	int num = rand() % 100;
+		else{
+			if(Match == nil){
+				Match = root;
+			}
+			else
+				break;
+		}
+			
+	}
+	/*int num = rand() % 100;
 	if(num > 50){
 		while(Match->rightChild != nil){
 			Match = Match->rightChild;
@@ -648,18 +656,18 @@ MovieNode* MovieTree::chooseMatch()
 		while(Match->rightChild != nil){
 			Match = Match->rightChild;
 		}
-	}
+	}*/
 	return Match;
 }
 void MovieTree::calculateScore(int score, bool flagWon)
 {
-	double numerator = countMovieNodes(root);
+	double numerator = rbValid(root);
 	double denominator = score;
 	double val;
 	
 	if(flagWon == true)
 	{
-		val = (numerator / denominator)*100;
+		val = (numerator / (denominator+1))*100;
 		// Do calculation of score
 		cout<< "You Won!!!" << endl;
 		cout<< "Score: " << val << endl;
