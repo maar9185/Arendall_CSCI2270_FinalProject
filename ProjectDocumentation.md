@@ -41,6 +41,7 @@ These functions are the constructor and destructor for the MovieTree class.
 MovieTree *mt = new MovieTree();
 
 Precondition: Nothing is established or initialized.
+
 Post condition: Varaibles are given inital conditions and at the end everything is removed.
 */
 ```
