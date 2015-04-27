@@ -26,6 +26,7 @@ In the terminal, run the following to compile and play the game:
 	./test
 	
 Next, the game will ask you to choose a difficulty
+
 	1. Easy
 	2. Medium
 	3. Hard
@@ -40,6 +41,7 @@ ex)
 	You are currently at: 84
 
 Then the game asks you directions to try to find your number.
+
 	1. Left
 	2. Right
 	3. Back
@@ -52,6 +54,7 @@ You also have the option to give up at any time.
 
 Once you have finished or given up, the game presents the following menu:
 Maze Tree Wizard Results
+
 	1. Show Score
     2. Print Tree Maze
     3. Try Again
@@ -67,11 +70,12 @@ displays all of its branches listing its parents.
 
 **Dependencies**
 The following include files are needed to run the Tree Maze Game
-	#include <iostream>
+
+	#include iostream
 	#include "MovieTree.h"
-	#include <stdio.h>
-	#include <stdlib.h>
-	#include <vector>
+	#include stdio.h
+	#include stdlib.h
+	#include vector
 
 All of these are standard and require no special installations.
 
@@ -87,4 +91,4 @@ None
 Abby Caballero
 
 **Open issues/bugs**
-The game doesn't look cool!
+The game could look cooler!
