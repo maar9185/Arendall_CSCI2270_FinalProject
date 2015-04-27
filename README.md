@@ -35,12 +35,12 @@ Next, the game will ask you to choose a difficulty
 The difficulty relates to how large the tree is (Easy has the smallest tree).
 
 The game then lists your number to find and your current root number.
-
+```
 ex)
-	- You chose Medium
-	- Try to find: 64
-	- You are currently at: 84
-
+	You chose Medium
+	Try to find: 64
+	You are currently at: 84
+```
 Then the game asks you directions to try to find your number.
 
 	1. Left
