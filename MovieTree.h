@@ -35,7 +35,6 @@ class MovieTree
         MovieTree();
         virtual ~MovieTree();
         void printMovieInventory();
-        //void printPath(vector<string> path);
         int countMovieNodes();
         void deleteMovieNode(int key);
         void addMovieNode(int key);
