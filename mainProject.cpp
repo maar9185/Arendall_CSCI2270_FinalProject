@@ -38,15 +38,21 @@ int main(int argc, char*argv[])
 		tryAgain = false;
 		quit = false;
 		score = 0;
-		displayMainMenu();
+		/*displayMainMenu();
 		cin >> input;
 		//clear out cin
 		cin.clear();
-		cin.ignore(10000,'\n');
+		cin.ignore(10000,'\n');*/
 
 
 		while(1)
 		{
+			displayMainMenu(); // Added by Matt fixed menu bug
+			cin >> input;
+			//clear out cin
+			cin.clear();
+			cin.ignore(10000,'\n');
+			
 			// Easy
 			if(input == 1){
 				easyTree(mt);
@@ -87,6 +93,7 @@ int main(int argc, char*argv[])
 			// Invalid Input
 			else{
 				cout << "Invalid Input" << endl;
+				cout << "Please hit 'enter' to go back" << endl; // Added by Matt
 				cin.clear();
 				cin.ignore(10000,'\n');
 			}
@@ -138,6 +145,7 @@ int main(int argc, char*argv[])
 						//}
 						current = mt->chooseCurrent();
 						cout<<"Restart at root: "<<current->key<<endl;
+						cout<< "Try to find: "<< Matched->key<<endl; // Matt Addition
 					}
 					else{
 						cout<<"You found: "<<current->key<<endl;
@@ -179,6 +187,7 @@ int main(int argc, char*argv[])
 						//}
 						current = mt->chooseCurrent();
 						cout<<"Restart at root: "<<current->key<<endl;
+						cout<< "Try to find: "<< Matched->key<<endl; // Matt Addition
 					}
 					else{
 						cout<<"You found: "<<current->key<<endl;
@@ -220,6 +229,7 @@ int main(int argc, char*argv[])
 						//}
 						current = mt->chooseCurrent();
 						cout<<"Restart at root: "<<current->key<<endl;
+						cout<< "Try to find: "<< Matched->key<<endl; // Matt Addition
 					}
 					else{
 						cout<<"You found: "<<current->key<<endl;
@@ -240,6 +250,7 @@ int main(int argc, char*argv[])
 				// invalid input
 				default:
 					cout << "Invalid Input" << endl;
+					cout << "Please hit 'enter' to go back" << endl; // Added by Matt
 					cin.clear();
 					cin.ignore(10000,'\n');
 					break;
@@ -291,8 +302,10 @@ int main(int argc, char*argv[])
 				// invalid input
 				default:
 					cout << "Invalid Input" << endl;
+					cout << "Please hit 'enter' to go back" << endl; // Added by Matt
 					cin.clear();
 					cin.ignore(10000,'\n');
+					// Update flags to quit. Added by Matt
 					break;
 			}
 		}
