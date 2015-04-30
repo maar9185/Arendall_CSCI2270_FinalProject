@@ -3,29 +3,30 @@
 ## Matthew Arendall
 ## Tree Maze Wizard
 
-##Project Documentation
+## Project Documentation
 
 **MovieTree Class Public Functions**
 
 ```
+// Main class for MovieTree
 class MovieTree
 {
         int opCount;
 
     public:
-        MovieTree();
-        virtual ~MovieTree();
-        void printMovieInventory();
-        int countMovieNodes();
-        void deleteMovieNode(int key);
-        void addMovieNode(int key);
-        void findMovie(int key);
-        bool isValid();
-        double countLongestPath();
-        MovieNode* chooseMatch();
-        MovieNode* chooseCurrent();
-        void calculateScore(int score, bool flagWon);
-        bool checkNIL(MovieNode * node);
+        MovieTree();			// Constructor
+        virtual ~MovieTree();		// Destructor
+        void printMovieInventory();	// Print function
+        int countMovieNodes();		// Count number of nodes
+        void deleteMovieNode(int key);	// Deletes a node
+        void addMovieNode(int key);	// Adds a node
+        void findMovie(int key);	// Finds a node
+        bool isValid();			// Checks to see if tree is valid
+        double countLongestPath();	// Counts longest path in tree
+        MovieNode* chooseMatch();	// Returns random node to find
+        MovieNode* chooseCurrent();	// Returns root node
+        void calculateScore(int score, bool flagWon);	// Calculates score
+        bool checkNIL(MovieNode * node);		// Checks NULL
 ```
 
 /*

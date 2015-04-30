@@ -57,9 +57,9 @@ Once you have finished or given up, the game presents the following menu:
 Maze Tree Wizard Results
 
 	1. Show Score
-    2. Print Tree Maze
-    3. Try Again
-    4. Quit
+    	2. Print Tree Maze
+   	3. Try Again
+    	4. Quit
 
 1. The score is based off a ratio between the height of the tree and how many 
 guesses it took you to find your number. If you gave up, it will simply you tell
@@ -68,6 +68,9 @@ you lost and better luck next time.
 displays all of its branches listing its parents.
 3. Brings you back to the first menu to choose a difficulty.
 4. Quits out of the program.
+
+The documentation file can be found in the ProjectDocumentation.md attached in the 
+repository.
 
 **Dependencies**
 The following include files are needed to run the Tree Maze Game
@@ -78,7 +81,7 @@ The following include files are needed to run the Tree Maze Game
 	#include stdlib.h
 	#include vector
 
-All of these are standard and require no special installations.
+All of these are standard in the c++ library and require no special installations.
 
 **System Requirements**
 There are no additional system requirements other than the operating system.
@@ -89,7 +92,8 @@ you are using Windows. The game runs through the terminal.
 None
 
 **Contributors**
-Abby Caballero
+Matthew Mcnichols
 
 **Open issues/bugs**
-The game could look cooler!
+After invalid input, the menu sometimes has trouble re-booting. 
+The game could also look cooler!
